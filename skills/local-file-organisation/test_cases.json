@@ -1,0 +1,12 @@
+[
+  {
+    "name": "file organisation dry-run",
+    "input": {
+      "sourceDir": "data",
+      "dryRun": true
+    },
+    "expected": {
+      "contains": "previewed"
+    }
+  }
+]

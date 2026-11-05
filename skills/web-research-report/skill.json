@@ -1,0 +1,13 @@
+{
+  "name": "web_research_report",
+  "description": "Search public web pages, open top results, extract readable text, and generate a research report.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "search_web",
+    "open_web_page",
+    "extract_page_text",
+    "send_lark_message",
+    "write_audit_note"
+  ],
+  "handler": "webResearchReport"
+}

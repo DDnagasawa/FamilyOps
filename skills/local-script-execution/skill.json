@@ -1,0 +1,9 @@
+{
+  "name": "local_script_execution",
+  "description": "Request execution of an approved local script from the configured script directory.",
+  "riskLevel": "high",
+  "allowedTools": [
+    "run_local_script"
+  ],
+  "handler": "localScriptExecution"
+}

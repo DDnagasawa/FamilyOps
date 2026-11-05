@@ -1,0 +1,14 @@
+{
+  "riskPolicy": {
+    "low": "allowed",
+    "medium": "allowed",
+    "high": "approval_required",
+    "critical": "blocked"
+  },
+  "blockedTools": [],
+  "approvalRequiredTools": [
+    "publish_social_post",
+    "run_local_script",
+    "enqueue_social_post"
+  ]
+}

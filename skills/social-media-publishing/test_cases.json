@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Draft social post and require approval for publishing",
+    "input": {
+      "text": "Testing approval gate"
+    },
+    "expectStatus": "approval_required"
+  }
+]

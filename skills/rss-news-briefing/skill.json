@@ -1,0 +1,10 @@
+{
+  "name": "rss_news_briefing",
+  "description": "Read configured RSS/news feeds and generate a concise news briefing.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_rss_news",
+    "send_lark_message"
+  ],
+  "handler": "rssNewsBriefing"
+}

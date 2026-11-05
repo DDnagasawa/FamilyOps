@@ -1,0 +1,14 @@
+[
+  {
+    "name": "folder monitoring scan",
+    "input": {
+      "paths": [
+        "data"
+      ],
+      "maxFiles": 20
+    },
+    "expected": {
+      "contains": "Folder Monitoring"
+    }
+  }
+]

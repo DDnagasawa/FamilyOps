@@ -1,0 +1,13 @@
+[
+  {
+    "name": "basic web research report",
+    "input": {
+      "topic": "Codex local agent platform",
+      "limit": 2,
+      "sendLark": false
+    },
+    "expected": {
+      "contains": "Web Research Report"
+    }
+  }
+]

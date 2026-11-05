@@ -1,0 +1,9 @@
+{
+  "name": "social_post_draft",
+  "description": "Draft social media content. Direct publishing is approval-gated.",
+  "riskLevel": "high",
+  "allowedTools": [
+    "publish_social_post"
+  ],
+  "handler": "socialPostDraft"
+}

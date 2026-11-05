@@ -1,0 +1,9 @@
+{
+  "name": "project_task_update",
+  "description": "Update a project task in authorised local context.",
+  "riskLevel": "medium",
+  "allowedTools": [
+    "update_project_task"
+  ],
+  "handler": "projectTaskUpdate"
+}

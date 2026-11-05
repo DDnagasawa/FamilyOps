@@ -1,0 +1,9 @@
+{
+  "name": "local_file_organisation",
+  "description": "Preview or execute authorised local file organisation by file extension.",
+  "riskLevel": "medium",
+  "allowedTools": [
+    "organize_local_files"
+  ],
+  "handler": "localFileOrganisation"
+}

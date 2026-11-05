@@ -1,0 +1,10 @@
+{
+  "name": "project_summary",
+  "description": "Summarise project status from authorised local context.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_context",
+    "send_lark_message"
+  ],
+  "handler": "projectSummary"
+}

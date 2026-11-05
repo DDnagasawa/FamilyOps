@@ -1,0 +1,12 @@
+[
+  {
+    "name": "github project summary",
+    "input": {
+      "perPage": 5,
+      "sendLark": false
+    },
+    "expected": {
+      "contains": "GitHub Project Summary"
+    }
+  }
+]

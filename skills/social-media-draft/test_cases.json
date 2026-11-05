@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Generate social media draft without publishing",
+    "input": {
+      "topic": "Codex local agent"
+    },
+    "expectContains": "Draft social post"
+  }
+]

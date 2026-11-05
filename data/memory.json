@@ -1,0 +1,9 @@
+{
+  "preferences": {
+    "briefingTone": "concise",
+    "defaultPushChannel": "lark",
+    "timezone": "Asia/Shanghai"
+  },
+  "facts": [],
+  "decisions": []
+}

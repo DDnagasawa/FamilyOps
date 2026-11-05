@@ -1,0 +1,12 @@
+[
+  {
+    "name": "default_public_github_summary",
+    "input": {
+      "perPage": 3,
+      "sendLark": false
+    },
+    "expected": {
+      "contains": "GitHub Public Repo Summary"
+    }
+  }
+]

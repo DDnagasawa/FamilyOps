@@ -1,0 +1,12 @@
+{
+  "name": "daily_briefing",
+  "description": "Generate a concise daily briefing and optionally push it to Lark.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_context",
+    "read_real_sources",
+    "send_lark_message",
+    "write_audit_note"
+  ],
+  "handler": "dailyBriefing"
+}

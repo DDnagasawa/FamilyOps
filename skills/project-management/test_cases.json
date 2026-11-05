@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Generate project summary without Lark",
+    "input": {
+      "sendLark": false
+    },
+    "expectContains": "Project Summary"
+  }
+]

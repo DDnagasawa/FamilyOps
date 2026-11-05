@@ -1,0 +1,9 @@
+{
+  "name": "social_media_publishing_request",
+  "description": "Request approved social media publishing by placing content into a local publishing outbox.",
+  "riskLevel": "high",
+  "allowedTools": [
+    "enqueue_social_post"
+  ],
+  "handler": "socialMediaPublishing"
+}

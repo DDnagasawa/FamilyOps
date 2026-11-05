@@ -1,0 +1,50 @@
+{
+  "briefingSources": [
+    {
+      "title": "Codex local agent platform MVP",
+      "source": "Internal project note",
+      "summary": "Build a reusable local runtime with skills, tools, permissions, audit logs, and Lark push.",
+      "priority": "high"
+    },
+    {
+      "title": "Lark approval channel",
+      "source": "Implementation plan",
+      "summary": "Use Lark as the notification and approval interaction channel.",
+      "priority": "medium"
+    },
+    {
+      "title": "Permission-first execution",
+      "source": "Safety model",
+      "summary": "Low-risk actions can run automatically, high-risk actions require approval, and critical actions are blocked.",
+      "priority": "high"
+    }
+  ],
+  "projects": [
+    {
+      "name": "General Agent Platform",
+      "status": "in_progress",
+      "summary": "Phase 1 implementation is focused on the general agent core MVP.",
+      "tasks": [
+        {
+          "title": "Create runtime",
+          "status": "done"
+        },
+        {
+          "title": "Register tools",
+          "status": "in_progress"
+        },
+        {
+          "title": "Add approval queue",
+          "status": "done"
+        }
+      ]
+    }
+  ],
+  "reminders": [
+    {
+      "title": "Review high-risk action policy",
+      "date": "2026-07-12",
+      "visibility": "owner"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "github_project_summary",
+  "description": "Summarise the configured GitHub repository, issues, pull requests, and recent commits.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_github_project_summary",
+    "send_lark_message"
+  ],
+  "handler": "githubProjectSummary"
+}

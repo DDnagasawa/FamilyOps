@@ -1,0 +1,12 @@
+[
+  {
+    "name": "send todo list card",
+    "input": {},
+    "expected": "A Lark interactive card is generated with open tasks and shopping items."
+  },
+  {
+    "name": "empty todo list",
+    "input": {},
+    "expected": "The card says all todos are done when no open items exist."
+  }
+]

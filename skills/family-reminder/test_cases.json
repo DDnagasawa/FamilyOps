@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Generate family reminder",
+    "input": {
+      "sendLark": false
+    },
+    "expectContains": "Family Reminder"
+  }
+]

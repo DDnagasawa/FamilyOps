@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Update project task status",
+    "input": {
+      "projectName": "General Agent Platform",
+      "taskTitle": "Add approval queue",
+      "status": "done"
+    },
+    "expectContains": "done"
+  }
+]

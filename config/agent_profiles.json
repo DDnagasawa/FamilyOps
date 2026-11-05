@@ -1,0 +1,25 @@
+[
+  {
+    "id": "default",
+    "name": "Default General Agent",
+    "description": "General-purpose local agent profile.",
+    "enabledSkills": [
+      "daily_briefing",
+      "project_summary",
+      "family_reminder",
+      "research_summary",
+      "social_post_draft"
+    ],
+    "permissionPolicy": "default"
+  },
+  {
+    "id": "family_ops",
+    "name": "Family Operations Agent",
+    "description": "Profile focused on family reminders, briefings, and household coordination.",
+    "enabledSkills": [
+      "daily_briefing",
+      "family_reminder"
+    ],
+    "permissionPolicy": "default"
+  }
+]

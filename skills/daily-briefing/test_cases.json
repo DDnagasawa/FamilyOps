@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Generate briefing without Lark",
+    "input": {
+      "sendLark": false
+    },
+    "expectContains": "Daily Briefing"
+  }
+]

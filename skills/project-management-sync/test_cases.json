@@ -1,0 +1,11 @@
+[
+  {
+    "name": "project management sync",
+    "input": {
+      "sendLark": false
+    },
+    "expected": {
+      "contains": "Project Management Sync"
+    }
+  }
+]

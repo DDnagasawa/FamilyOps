@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Create event task and shopping item",
+    "input": {
+      "text": "Lisa football match on 2026-09-05; John buy milk by 2026-09-01; Anna prepare dinner task by 2026-09-02",
+      "sendLark": false
+    },
+    "expected": {
+      "contains": ["Event", "Shopping", "Task"]
+    }
+  },
+  {
+    "name": "Avoid duplicate shopping item",
+    "input": {
+      "text": "John buy milk by 2026-09-01; Anna buy milk by 2026-09-01",
+      "sendLark": false
+    },
+    "expected": {
+      "contains": ["duplicate_shopping_item"]
+    }
+  },
+  {
+    "name": "Privacy-aware surprise event",
+    "input": {
+      "text": "surprise birthday for Lisa on 2026-09-10",
+      "sendLark": false
+    },
+    "expected": {
+      "contains": ["Recipients"]
+    }
+  }
+]

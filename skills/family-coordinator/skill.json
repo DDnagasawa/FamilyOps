@@ -1,0 +1,13 @@
+{
+  "name": "family_coordinator",
+  "description": "Arrange family affairs from approved text input by creating local events, tasks, shopping items, privacy-aware reminders, and optional Lark updates.",
+  "handler": "familyCoordinator",
+  "riskLevel": "medium",
+  "allowedTools": [
+    "plan_family_affairs",
+    "read_family_plan",
+    "list_family_todos",
+    "send_family_todo_card",
+    "send_lark_message"
+  ]
+}

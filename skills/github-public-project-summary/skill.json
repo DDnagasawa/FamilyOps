@@ -1,0 +1,10 @@
+{
+  "name": "github_public_project_summary",
+  "description": "Summarise a configured public GitHub repository without requiring a token.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_github_public_project_summary",
+    "send_lark_message"
+  ],
+  "handler": "githubPublicProjectSummary"
+}

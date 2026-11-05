@@ -1,0 +1,12 @@
+[
+  {
+    "name": "default_rss_news_briefing",
+    "input": {
+      "limit": 3,
+      "sendLark": false
+    },
+    "expected": {
+      "contains": "RSS News Briefing"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "social media publishing approval gate",
+    "input": {
+      "text": "Draft post"
+    },
+    "expected": {
+      "contains": "approval_required"
+    }
+  }
+]

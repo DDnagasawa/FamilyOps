@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Generate research summary",
+    "input": {
+      "topic": "General local agent platform"
+    },
+    "expectContains": "Research Summary"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "family_todo_list",
+  "description": "Send the current family todo list to Lark as an interactive card with Done buttons.",
+  "handler": "familyTodoList",
+  "riskLevel": "medium",
+  "allowedTools": [
+    "send_family_todo_card",
+    "list_family_todos",
+    "complete_family_todo"
+  ]
+}

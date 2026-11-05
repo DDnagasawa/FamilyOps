@@ -1,0 +1,9 @@
+{
+  "name": "research_summary",
+  "description": "Generate a lightweight research summary from authorised local context.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_context"
+  ],
+  "handler": "researchSummary"
+}

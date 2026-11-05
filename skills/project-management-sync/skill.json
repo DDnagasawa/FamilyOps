@@ -1,0 +1,10 @@
+{
+  "name": "project_management_sync",
+  "description": "Sync authorised local project context into a connector-friendly project status file.",
+  "riskLevel": "medium",
+  "allowedTools": [
+    "sync_project_context",
+    "send_lark_message"
+  ],
+  "handler": "projectManagementSync"
+}

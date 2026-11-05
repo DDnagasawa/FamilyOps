@@ -1,0 +1,11 @@
+[
+  {
+    "name": "script execution approval gate",
+    "input": {
+      "script": "example.sh"
+    },
+    "expected": {
+      "contains": "approval_required"
+    }
+  }
+]

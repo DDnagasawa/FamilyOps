@@ -1,0 +1,7 @@
+{
+  "name": "social_media_draft",
+  "description": "Generate social media draft content without publishing.",
+  "riskLevel": "low",
+  "allowedTools": [],
+  "handler": "socialPostDraftOnly"
+}

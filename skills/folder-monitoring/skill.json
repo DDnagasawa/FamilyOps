@@ -1,0 +1,9 @@
+{
+  "name": "folder_monitoring",
+  "description": "Scan configured local folders and report added, modified, or removed files.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "scan_folder_changes"
+  ],
+  "handler": "folderMonitoring"
+}

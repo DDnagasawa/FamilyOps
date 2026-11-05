@@ -1,0 +1,11 @@
+{
+  "name": "family_reminder",
+  "description": "Create a concise reminder summary for family or personal events.",
+  "riskLevel": "low",
+  "allowedTools": [
+    "read_context",
+    "list_family_reminders",
+    "send_lark_message"
+  ],
+  "handler": "familyReminder"
+}

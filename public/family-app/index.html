@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FamilyOps</title>
+    <link rel="stylesheet" href="./styles.css?v=20261104-dup" />
+  </head>
+  <body>
+    <section id="authScreen" class="auth-screen">
+      <div class="auth-card">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="auth-heading">
+          <span class="hero-mark">AI</span>
+          <div>
+            <p class="eyebrow">FamilyOps</p>
+            <h1>登录</h1>
+          </div>
+        </div>
+        <div class="auth-tabs" role="tablist" aria-label="登录或注册">
+          <button id="loginTab" class="active" type="button">登录</button>
+          <button id="registerTab" type="button">注册</button>
+        </div>
+        <form id="loginForm" class="auth-form">
+          <label>
+            <span>邮箱或手机号 *</span>
+            <input id="loginId" autocomplete="username" required />
+          </label>
+          <label>
+            <span>密码 *</span>
+            <input id="loginPassword" type="password" autocomplete="current-password" required />
+          </label>
+          <button id="loginSubmit" type="submit">进入</button>
+        </form>
+        <form id="registerForm" class="auth-form" hidden>
+          <section class="auth-section">
+            <h2>必填信息</h2>
+            <div class="field-grid">
+              <label>
+                <span>姓名 *</span>
+                <input id="registerName" autocomplete="name" required />
+              </label>
+              <label>
+                <span>邮箱或手机号 *</span>
+                <input id="registerLoginId" autocomplete="username" required />
+              </label>
+              <label>
+                <span>密码 *</span>
+                <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required />
+              </label>
+              <label>
+                <span>家庭角色 *</span>
+                <select id="registerRole" required>
+                  <option value="">选择角色</option>
+                  <option value="father">父亲</option>
+                  <option value="mother">母亲</option>
+                  <option value="child">孩子</option>
+                  <option value="grandparent">祖父母</option>
+                  <option value="adult">成年人</option>
+                  <option value="minor">未成年人</option>
+                </select>
+              </label>
+              <label>
+                <span>性别（用于哥哥/姐姐等关系）</span>
+                <select id="registerGender">
+                  <option value="unknown">未设置</option>
+                  <option value="male">男性</option>
+                  <option value="female">女性</option>
+                </select>
+              </label>
+              <label>
+                <span>是否 18 岁以上 *</span>
+                <select id="registerIsAdult" required>
+                  <option value="">选择</option>
+                  <option value="true">是</option>
+                  <option value="false">否</option>
+                </select>
+              </label>
+            </div>
+          </section>
+          <section class="auth-section">
+            <h2>基础信息</h2>
+            <div class="field-grid">
+              <label>
+                <span>昵称 / 常用叫法</span>
+                <input id="registerNickname" />
+              </label>
+              <label>
+                <span>出生日期 *</span>
+                <input id="registerBirthday" type="date" required />
+              </label>
+              <label>
+                <span>默认提醒方式</span>
+                <select id="registerReminderStyle">
+                  <option value="app">App 内提醒</option>
+                  <option value="browser">浏览器通知</option>
+                  <option value="lark">Lark</option>
+                  <option value="none">暂不开启</option>
+                </select>
+              </label>
+              <label>
+                <span>默认提醒时间</span>
+                <input id="registerDefaultReminderTime" type="time" />
+              </label>
+            </div>
+            <fieldset class="check-group">
+              <legend>联系方式</legend>
+              <label><input type="checkbox" name="registerContactChannel" value="app" checked /> App</label>
+              <label><input type="checkbox" name="registerContactChannel" value="lark" /> Lark</label>
+              <label><input type="checkbox" name="registerContactChannel" value="email" /> Email</label>
+              <label><input type="checkbox" name="registerContactChannel" value="phone" /> 手机</label>
+            </fieldset>
+          </section>
+          <section class="auth-section">
+            <h2>家庭账户联动</h2>
+            <div class="field-grid">
+              <label class="full-field">
+                <span>已有家庭码或邀请链接</span>
+                <input id="registerFamilyJoinCode" placeholder="输入 5 位家庭码，或粘贴邀请链接" />
+              </label>
+              <label>
+                <span>新家庭码</span>
+                <input id="registerFamilyCode" readonly placeholder="点击右侧生成" />
+              </label>
+              <label>
+                <span>邀请链接</span>
+                <input id="registerFamilyInviteLink" readonly placeholder="生成家庭码后显示" />
+              </label>
+            </div>
+            <div class="family-invite-actions">
+              <button id="generateFamilyCode" class="secondary-button" type="button">生成家庭码</button>
+              <span id="familyInviteMessage" class="field-help"></span>
+            </div>
+            <p class="field-help">想要家庭账户联动，请输入家庭码，或从邀请链接加入同一个家庭。</p>
+          </section>
+          <section class="auth-section">
+            <h2>地址信息</h2>
+            <div class="field-grid">
+              <label>
+                <span>家庭地址</span>
+                <input id="registerHomeAddress" />
+              </label>
+              <label>
+                <span>公司地址</span>
+                <input id="registerCompanyAddress" />
+              </label>
+              <label>
+                <span>学校地址</span>
+                <input id="registerSchoolAddress" />
+              </label>
+            </div>
+          </section>
+          <section class="auth-section">
+            <h2>偏好信息</h2>
+            <div class="field-grid">
+              <label>
+                <span>兴趣爱好</span>
+                <input id="registerInterests" placeholder="足球、画画、游戏、阅读" />
+              </label>
+              <label>
+                <span>食物偏好</span>
+                <input id="registerFoodPreferences" />
+              </label>
+              <label>
+                <span>过敏信息</span>
+                <input id="registerAllergies" />
+              </label>
+              <label>
+                <span>不喜欢的东西</span>
+                <input id="registerDislikes" />
+              </label>
+              <label class="full-field">
+                <span>AI 备注</span>
+                <input id="registerAiNotes" maxlength="240" placeholder="例如：主要负责接送、做饭、家庭日程" />
+              </label>
+            </div>
+          </section>
+          <button type="submit">创建账号</button>
+        </form>
+        <p id="authMessage" class="auth-message"></p>
+      </div>
+    </section>
+
+    <div id="appShell" class="app-shell" hidden>
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div class="window-dots" aria-hidden="true">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <button id="profileAvatar" class="profile-avatar" type="button" aria-label="用户中心">
+            <span id="profileBadge"></span>
+          </button>
+        </div>
+
+        <label class="search">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索家庭事项" />
+        </label>
+
+        <nav class="primary-nav" aria-label="主页面">
+          <button class="nav-row" data-page="assistant">
+            <span class="nav-icon blue">✦</span>
+            <span>AI 对话</span>
+            <em id="chatBadge">0</em>
+          </button>
+          <button class="nav-row selected" data-page="calendar">
+            <span class="nav-icon red">▦</span>
+            <span>日历</span>
+            <em id="calendarBadge">0</em>
+          </button>
+          <button class="nav-row" data-page="todos">
+            <span class="nav-icon yellow-icon">☷</span>
+            <span>Todo List</span>
+            <em id="todoBadge">0</em>
+          </button>
+          <button class="nav-row" data-page="learning">
+            <span class="nav-icon blue">✧</span>
+            <span>记忆与学习</span>
+            <em id="learningBadge">0</em>
+          </button>
+        </nav>
+
+        <section class="side-list">
+          <h2>家庭分类</h2>
+          <div id="tagChips" class="tag-chips"></div>
+        </section>
+
+        <button id="addTodoSide" class="add-list">＋ 新增 Todo</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="currentDateLabel"></p>
+            <h1 id="pageTitle">日历</h1>
+            <p class="completion" id="pageSubtitle">家庭事件和 Todo 归档</p>
+          </div>
+          <div class="top-actions">
+            <button id="notificationButton" class="ghost-button notification-button" aria-label="开启提醒">◷</button>
+            <button id="filterButton" class="ghost-button" aria-label="筛选分类">≡</button>
+            <button id="newItemButton" class="ghost-button" aria-label="新增">＋</button>
+          </div>
+          <div id="filterPopover" class="filter-popover" hidden>
+            <h2>筛选分类</h2>
+            <div id="filterOptions"></div>
+            <div class="history-box">
+              <strong id="historyTitle">全部历史</strong>
+              <div id="historyList"></div>
+            </div>
+          </div>
+        </header>
+
+        <section id="assistantPage" class="page assistant-page" hidden>
+          <section class="assistant-layout">
+            <div class="chat-stage">
+              <div class="assistant-hero">
+                <span class="hero-mark">AI</span>
+                <div>
+                  <h2>告诉我家庭安排</h2>
+                  <p>输入一句普通话，FamilyOps 会自动写入日历和 Todo。</p>
+                </div>
+              </div>
+              <div id="chatMessages" class="chat-messages"></div>
+              <form id="chatForm" class="chat-form">
+                <textarea id="chatInput" rows="4" placeholder="例如：明天晚上 8 点提醒我健身；周六 Lisa 足球比赛；John 明天买牛奶"></textarea>
+                <button type="submit">发送</button>
+              </form>
+            </div>
+            <aside class="assistant-rail">
+              <h2>待处理</h2>
+              <div id="assistantInbox" class="rail-list"></div>
+            </aside>
+          </section>
+        </section>
+
+        <section id="calendarPage" class="page calendar-page">
+          <div id="calendarMonthView" class="calendar-month-view">
+            <div class="monthbar">
+              <button id="prevMonth" class="plain-button" aria-label="上个月">‹</button>
+              <h2 id="monthLabel"></h2>
+              <button id="nextMonth" class="plain-button" aria-label="下个月">›</button>
+            </div>
+            <div class="weekday-row">
+              <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+            </div>
+            <div id="calendarGrid" class="calendar-grid"></div>
+          </div>
+          <section id="calendarDayDetail" class="day-detail date-detail-view" hidden>
+            <div class="section-heading">
+              <div>
+                <h2 id="selectedDateTitle">今天</h2>
+                <p id="selectedDateSub">当天事件和 Todo 完成情况</p>
+              </div>
+              <button id="backToMonth" class="text-button">返回日历</button>
+            </div>
+            <div id="dayItems" class="day-items"></div>
+          </section>
+        </section>
+
+        <section id="todoPage" class="page todo-page" hidden>
+          <div id="todoList" class="todo-list"></div>
+        </section>
+
+        <section id="learningPage" class="page learning-page" hidden>
+          <section class="profile-panel">
+            <div class="section-heading">
+              <div>
+                <h2>记忆与学习</h2>
+                <p>只使用你的可控记忆。候选规则必须经过确认才会生效。</p>
+              </div>
+            </div>
+            <section class="auth-section learning-settings">
+              <h2>控制</h2>
+              <label class="toggle-row">
+                <span><strong>保存个性化记忆</strong><small>用于跨会话召回和更准确的安排</small></span>
+                <input id="learningEnabled" type="checkbox" />
+              </label>
+              <label class="toggle-row">
+                <span><strong>后台自动 review</strong><small>默认关闭；打开后也只生成候选，不会自动启用</small></span>
+                <input id="learningReviewEnabled" type="checkbox" />
+              </label>
+              <button id="runLearningReview" type="button">现在分析一次</button>
+              <button id="clearLearningMemory" type="button" class="text-button">清除我的记忆</button>
+              <p id="learningMessage" class="auth-message"></p>
+            </section>
+            <section class="auth-section">
+              <div class="section-heading compact-heading">
+                <div><h2>待确认的学习规则</h2><p>批准前不会改变推荐或自动执行行为。</p></div>
+              </div>
+              <div id="learningCandidates" class="learning-list"></div>
+            </section>
+            <section class="auth-section">
+              <div class="section-heading compact-heading">
+                <div><h2>已保存的记忆</h2><p>你可以单独删除，也可以一次清除。</p></div>
+              </div>
+              <div id="learningMemories" class="learning-list"></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="profilePage" class="page profile-page" hidden>
+          <section class="profile-panel">
+            <div class="section-heading">
+              <div>
+                <h2 id="profileName">用户中心</h2>
+                <p id="profileMeta">管理 AI 需要知道的基础信息</p>
+              </div>
+              <button id="logoutButton" class="text-button" type="button">退出登录</button>
+            </div>
+            <form id="profileForm" class="profile-form">
+              <section class="auth-section">
+                <h2>用户基础信息</h2>
+                <div class="field-grid">
+                  <label>
+                    <span>姓名 *</span>
+                    <input id="profileDisplayName" required />
+                  </label>
+                  <label>
+                    <span>邮箱或手机号 *</span>
+                    <input id="profileLoginId" required />
+                  </label>
+                  <label>
+                    <span>昵称 / 常用叫法</span>
+                    <input id="profileNickname" />
+                  </label>
+                  <label>
+                    <span>出生日期 *</span>
+                    <input id="profileBirthday" type="date" required />
+                  </label>
+                  <label>
+                    <span>家庭角色 *</span>
+                    <select id="profileRole" required>
+                      <option value="father">父亲</option>
+                      <option value="mother">母亲</option>
+                      <option value="child">孩子</option>
+                      <option value="grandparent">祖父母</option>
+                      <option value="adult">成年人</option>
+                      <option value="minor">未成年人</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>性别（用于哥哥/姐姐等关系）</span>
+                    <select id="profileGender">
+                      <option value="unknown">未设置</option>
+                      <option value="male">男性</option>
+                      <option value="female">女性</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>是否 18 岁以上 *</span>
+                    <select id="profileIsAdult" required>
+                      <option value="true">是</option>
+                      <option value="false">否</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>默认提醒方式</span>
+                    <select id="profileReminderStyle">
+                      <option value="app">App 内提醒</option>
+                      <option value="browser">浏览器通知</option>
+                      <option value="lark">Lark</option>
+                      <option value="none">暂不开启</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>默认提醒时间</span>
+                    <input id="profileDefaultReminderTime" type="time" />
+                  </label>
+                </div>
+                <fieldset class="check-group">
+                  <legend>联系方式</legend>
+                  <label><input type="checkbox" name="profileContactChannel" value="app" /> App</label>
+                  <label><input type="checkbox" name="profileContactChannel" value="lark" /> Lark</label>
+                  <label><input type="checkbox" name="profileContactChannel" value="email" /> Email</label>
+                  <label><input type="checkbox" name="profileContactChannel" value="phone" /> 手机</label>
+                </fieldset>
+              </section>
+              <section class="auth-section">
+                <h2>地址信息</h2>
+                <div class="field-grid">
+                  <label>
+                    <span>家庭地址</span>
+                    <input id="profileHomeAddress" />
+                  </label>
+                  <label>
+                    <span>公司地址</span>
+                    <input id="profileCompanyAddress" />
+                  </label>
+                  <label>
+                    <span>学校地址</span>
+                    <input id="profileSchoolAddress" />
+                  </label>
+                </div>
+              </section>
+              <section class="auth-section">
+                <h2>偏好信息</h2>
+                <div class="field-grid">
+                  <label>
+                    <span>兴趣爱好</span>
+                    <input id="profileInterests" />
+                  </label>
+                  <label>
+                    <span>食物偏好</span>
+                    <input id="profileFoodPreferences" />
+                  </label>
+                  <label>
+                    <span>过敏信息</span>
+                    <input id="profileAllergies" />
+                  </label>
+                  <label>
+                    <span>不喜欢的东西</span>
+                    <input id="profileDislikes" />
+                  </label>
+                </div>
+                <label>
+                  <span>AI 备注</span>
+                  <textarea id="profileAiNotes" rows="4" maxlength="240" placeholder="例如：主要负责接送、做饭、家庭日程"></textarea>
+                </label>
+              </section>
+              <button type="submit">保存</button>
+              <p id="profileMessage" class="auth-message"></p>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+    <div id="todoModal" class="todo-modal-overlay" hidden>
+      <section class="todo-modal-panel" role="dialog" aria-modal="true" aria-labelledby="todoModalTitle">
+        <div class="modal-heading">
+          <p>今日 Todo</p>
+          <h2 id="todoModalTitle">新增任务</h2>
+        </div>
+        <form id="todoForm" class="todo-form">
+          <input id="todoTitle" placeholder="例如：今晚 8 点提醒我健身" />
+          <input id="todoAlarm" type="datetime-local" />
+          <div class="todo-modal-actions">
+            <button id="todoCancel" type="button" class="text-button">取消</button>
+            <button type="submit">添加</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div id="alarmOverlay" class="alarm-overlay" hidden>
+      <section class="alarm-panel" role="dialog" aria-modal="true" aria-labelledby="alarmTitle">
+        <p id="alarmMeta" class="alarm-meta">提醒</p>
+        <h2 id="alarmTitle">家庭事项提醒</h2>
+        <p id="alarmBody">该处理这件事了。</p>
+        <div class="alarm-actions">
+          <button id="alarmSnooze" type="button" class="text-button">10 分钟后</button>
+          <button id="alarmComplete" type="button" class="text-button">完成</button>
+          <button id="alarmStop" type="button">知道了</button>
+        </div>
+      </section>
+    </div>
+    <script src="./i18n.js?v=20261104-dup"></script>
+    <script src="./app.js?v=20261104-dup"></script>
+  </body>
+</html>
